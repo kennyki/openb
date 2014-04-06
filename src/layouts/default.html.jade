@@ -55,11 +55,9 @@ html(lang="en")
             - clazz = (document.url === doc.url) ? 'active' : null
             li(typeof="sioc:Page", about=doc.url, class=clazz)
               a(href=doc.url, property="dc:title")= doc.title
-        form.navbar-form.navbar-right(action="/search")
-          div.form-group
-            input.form-control(name="q", type="text", placeholder="Search", value=q)
-          button.btn.btn.default(type="submit")
-            span.glyphicon.glyphicon-search
+
+        div.navbar-form.navbar-right!= getLunrSearchBlock("search")
+        
     .container
       section#content.content!= content
       hr

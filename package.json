@@ -35,8 +35,8 @@
     "docpad-plugin-text": "2.x",
     "docpad-plugin-jade": "2.x",
     "marked": "*",
-    "docpad-plugin-partials": "~2.9.0",
-    "docpad-plugin-sitemap": "~2.2.0"
+    "docpad-plugin-sitemap": "~2.2.0",
+    "docpad-plugin-lunr": "~2.0.7"
   },
   "devDependencies": {
     "bower": "~1"
