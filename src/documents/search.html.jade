@@ -3,4 +3,9 @@ layout: "default"
 title: "Search"
 ---
 
-div!= getLunrSearchPage(site.context+"openb")
+input.search-bar#lunr-input(type="text", placeholder="Search terms")
+input#lunr-hidden(type="hidden")
+
+script(src=site.url + "/lunr/lunr.min.js")
+script(src=site.url + "/lunr/lunr-data-openb.js")
+script(src=site.url + "/lunr/lunr-ui.min.js")

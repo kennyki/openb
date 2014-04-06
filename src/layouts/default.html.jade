@@ -9,6 +9,9 @@
 - styles.add([siteUrl+"/styles/style.css"])
 - scripts.add([siteUrl+"/scripts/script.js"])
 
+//- Site or document-specific
+- scripts.add(site.scripts || []).add(document.scripts || [])
+
 doctype 5
 html(lang="en")
   head
