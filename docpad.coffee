@@ -64,20 +64,6 @@ docpadConfig =
       # Merge the document keywords with the site keywords
       @site.keywords.concat(@document.keywords or []).join(', ')
 
-    # Search
-    search: (q) ->
-      q = q || ""
-
-      query = 
-        $or:
-          # The rendered content (before being wrapped by the layouts).
-          contentRenderedWithoutLayouts:
-            $like: q
-          title:
-            $like: q
-
-      results = @getCollection("pages").findAll(query).toJSON()
-
   # Collections
   # ===========
   # These are special collections that our website makes available to us
@@ -91,6 +77,16 @@ docpadConfig =
     sitemap:
       # only the pages
       collectionName: "pages"
+    lunr:
+      indexes:
+        # index everything
+        openb:
+          collection: "html"
+          resultsTemplate: (ctx) ->
+            post = ctx.post
+            return """
+            <a class="list-group-item" href="#{post.url}">#{post.title}</a>
+            """
 
   # DocPad Events
   # =============

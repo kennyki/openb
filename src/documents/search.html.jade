@@ -1,23 +1,6 @@
 ---
 layout: "default"
 title: "Search"
-dynamic: true
 ---
 
-- var q = (req.query.q || "")
-- var results = search(q)
-
-form.form-inline(action="/search")
-	div.form-group
-		input.form-control(name="q", type="text", placeholder="Search", value=q)
-	button.btn.btn.default(type="submit")
-		span.glyphicon.glyphicon-search
-hr
-- if (results && results.length != 0)
-	p Found content in #{results.length} pages:
-	div.list-group
-		each page in results
-			a.list-group-item(href=page.url)= page.title
-- else
-	div
-		i Sorry, there are no results for that search.
+div!= getLunrSearchPage("openb")
