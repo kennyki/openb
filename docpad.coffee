@@ -15,7 +15,7 @@ docpadConfig =
       url: "http://kennyki.github.io/openb"
 
       # production relative root
-      context: "openb"
+      context: "openb/"
 
       # Here are some old site urls that you would like to redirect from
       oldUrls: []
