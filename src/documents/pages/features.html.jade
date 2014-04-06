@@ -1,0 +1,18 @@
+---
+layout: "default"
+title: "Features"
+pageOrder: 1
+---
+
+h3 DISTRIBUTION MANAGEMENT SYSTEM
+hr
+
+- var features = [{title: "Inventory management", partial: "inventory"}, {title: "Order management", partial: "order"}, {title: "Customer management", partial: "customer"}, {title: "Business Process management", partial: "bpm"}, {title: "Workplace Mobility", partial: "workplace"}, {title: "Customisability", partial: "customisability"}, {title: "Government Rebate", partial: "rebate"}]
+
+- each feature, index in features
+	div.panel.panel-default
+		div.panel-heading
+			h4.panel-title= feature.title
+		div.panel-body!= partial(feature.partial)
+
+div.alert.alert-info!= partial("offer")

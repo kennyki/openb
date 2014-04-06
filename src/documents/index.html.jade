@@ -1,0 +1,18 @@
+---
+layout: "default"
+title: "Home"
+---
+
+// Main hero unit for a primary marketing message or call to action.
+div.jumbotron
+  h2 Open Business Solutions
+    p
+      small Integrated Distribution Management Systems
+div.row
+  - var links = [{img: "/images/1342895964_code.png", title: "Inventory Management"}, {img: "/images/1342895974_uploads.png", title: "Order Management"}, {img: "/images/1342895978_todos.png", title: "Customer Management"}];
+  - each link in links
+    div.col-md-4
+      a.thumbnail(href="/pages/features")
+        img(src=link.img alt=link.title)
+        div.caption
+          h3.center-txt= link.title
