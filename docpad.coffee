@@ -12,7 +12,10 @@ docpadConfig =
     # Specify some site properties
     site:
       # The production url of our website
-      url: "http://www.openbusiness.com.sg/"
+      url: "http://kennyki.github.io/openb"
+
+      # production relative root
+      context: "openb"
 
       # Here are some old site urls that you would like to redirect from
       oldUrls: []
@@ -63,6 +66,15 @@ docpadConfig =
     getPreparedKeywords: ->
       # Merge the document keywords with the site keywords
       @site.keywords.concat(@document.keywords or []).join(', ')
+
+  # Environments
+  # ------------
+  environments:
+    development:
+      templateData:
+        site:
+          url: "http://localhost:9778"
+          context: ""
 
   # Collections
   # ===========

@@ -1,12 +1,13 @@
 - var scripts = getBlock('scripts')
 - var styles = getBlock('styles')
+- var siteUrl = site.url
 
 //- Bootstrap
-- styles.add(["/vendor/components-bootstrap/css/bootstrap.css"])
+- styles.add([siteUrl+"/vendor/components-bootstrap/css/bootstrap.css"])
 
 //- User
-- styles.add(["/styles/style.css"])
-- scripts.add(["/scripts/script.js"])
+- styles.add([siteUrl+"/styles/style.css"])
+- scripts.add([siteUrl+"/scripts/script.js"])
 
 doctype 5
 html(lang="en")
@@ -49,14 +50,14 @@ html(lang="en")
     nav.navbar.navbar-default.navbar-fixed-top
       .container
         .navbar-header
-          a.navbar-brand(href="/") Home
+          a.navbar-brand(href=siteUrl+"/") Home
         ul.nav.navbar-nav
           each doc in getCollection('pages').toJSON()
             - clazz = (document.url === doc.url) ? 'active' : null
             li(typeof="sioc:Page", about=doc.url, class=clazz)
-              a(href=doc.url, property="dc:title")= doc.title
+              a(href=siteUrl+doc.url, property="dc:title")= doc.title
 
-        div.navbar-form.navbar-right!= getLunrSearchBlock("search")
+        div.navbar-form.navbar-right!= getLunrSearchBlock(site.context+"search")
         
     .container
       section#content.content!= content

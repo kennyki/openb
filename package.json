@@ -2,7 +2,7 @@
   "name": "openb-web",
   "version": "0.1.0",
   "description": "Open Business Solutions - Integrated Distribution Management Systems",
-  "homepage": "http://www.openbusiness.com.sg/",
+  "homepage": "http://kennyki.github.io/openb",
   "keywords": [
     "openb",
     "openbusiness",
@@ -36,7 +36,8 @@
     "docpad-plugin-jade": "2.x",
     "marked": "*",
     "docpad-plugin-sitemap": "~2.2.0",
-    "docpad-plugin-lunr": "~2.0.7"
+    "docpad-plugin-lunr": "~2.0.7",
+    "docpad-plugin-ghpages": "~2.4.3"
   },
   "devDependencies": {
     "bower": "~1"
